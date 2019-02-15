@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'top-collegues-front';
-  isCollapsed = true;
+  public isCollapsed = false;
 }
