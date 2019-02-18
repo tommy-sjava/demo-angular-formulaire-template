@@ -6,12 +6,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AvisComponent } from './avis/avis.component';
 import { CollegueComponent } from './collegue/collegue.component';
+import { ListeColleguesComponentComponent } from './liste-collegues-component/liste-collegues-component.component';
+import { AccueilComponentComponent } from './accueil-component/accueil-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AvisComponent,
-    CollegueComponent
+    CollegueComponent,
+    ListeColleguesComponentComponent,
+    AccueilComponentComponent
   ],
   imports: [
     NgbModule,
