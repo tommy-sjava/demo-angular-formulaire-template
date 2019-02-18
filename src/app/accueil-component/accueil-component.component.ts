@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../services/data.service';
+import { Collegue } from '../models';
 
 @Component({
   selector: 'app-accueil-component',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccueilComponentComponent implements OnInit {
 
-  constructor() { }
+  collegues: Collegue[] = this._serv.lister();
+
+  constructor(private _serv: DataService) { }
 
   ngOnInit() {
   }

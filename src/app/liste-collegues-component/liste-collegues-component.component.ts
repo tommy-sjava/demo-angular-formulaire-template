@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Collegue } from '../models';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-liste-collegues-component',
@@ -8,7 +9,7 @@ import { Collegue } from '../models';
 })
 export class ListeColleguesComponentComponent implements OnInit {
 
-  @Input() collegues: Collegue[];
+  @Input() Lcollegues: Collegue[];
   page = 1;
   pageSize = 3;
 
