@@ -9,6 +9,8 @@ import { Collegue } from '../models';
 export class ListeColleguesComponentComponent implements OnInit {
 
   @Input() collegues: Collegue[];
+  page = 1;
+  pageSize = 3;
 
   constructor() { }
 
