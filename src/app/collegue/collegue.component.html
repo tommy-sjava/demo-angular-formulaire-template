@@ -8,10 +8,10 @@
 
     <div class="align-items-center">
       <div>
-        <p>{{collegue.pseudo}}</p>
+        <p>{{collegue.pseudo | uppercase}}</p>
       </div>
       <div>
-        <p>{{collegue.score}}</p>
+        <p>{{collegue.score | score}}</p>
       </div>
       <div class="d-inline">
         <app-avis (avis)="onVoted($event)" [btnLikeActif]="likeActif" [btnUnLikeActif]="unLikeActif"></app-avis>
