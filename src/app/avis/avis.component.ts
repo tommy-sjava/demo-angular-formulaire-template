@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, OnChanges } from '@angular/core';
+import { Avis } from '../models';
 
 @Component({
   selector: 'app-avis',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AvisComponent implements OnInit {
 
+  @Output() avis: EventEmitter<Avis> = new EventEmitter<Avis>();
+  @Input() btnLikeActif = true;
+  @Input() btnUnLikeActif = true;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  like() {
+    this.avis.emit(Avis.AIMER);
+  }
+
+  unlike() {
+    this.avis.emit(Avis.DETESTER);
   }
 
 }

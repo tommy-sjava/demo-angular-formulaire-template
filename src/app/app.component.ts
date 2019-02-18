@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Collegue } from './models';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'top-collegues-front';
+  collegueTest: Collegue = {
+    pseudo: 'Aria',
+    score: 0,
+    photoUrl: 'https://myanimelist.cdn-dena.com/images/characters/7/113250.jpg'
+  }
 }
 
