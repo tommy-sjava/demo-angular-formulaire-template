@@ -10,6 +10,7 @@ import { ListeColleguesComponentComponent } from './liste-collegues-component/li
 import { AccueilComponentComponent } from './accueil-component/accueil-component.component';
 import { ScorePipe } from './pipes/score.pipe';
 import { HistoriqueVotesComponent } from './historique-votes/historique-votes.component';
+import { VoteCountComponent } from './vote-count/vote-count.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HistoriqueVotesComponent } from './historique-votes/historique-votes.co
     ListeColleguesComponentComponent,
     AccueilComponentComponent,
     ScorePipe,
-    HistoriqueVotesComponent
+    HistoriqueVotesComponent,
+    VoteCountComponent
   ],
   imports: [
     NgbModule,
