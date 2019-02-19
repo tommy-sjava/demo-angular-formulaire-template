@@ -1,6 +1,10 @@
-<div class="d-flex justify-content-around flex-wrap">
-
-  <app-collegue *ngFor="let collegue of Lcollegues | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize"
-    [collegue]="collegue "></app-collegue>
-  <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="Lcollegues.length"></ngb-pagination>
+<div class="d-flex flex-column ">
+  <div class="d-flex flex-row justify-content-around">
+    <app-collegue *ngFor="let collegue of Lcollegues | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize"
+      [collegue]="collegue "></app-collegue>
+  </div>
+  <div class="d-flex justify-content-around">
+    <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="Lcollegues.length">
+    </ngb-pagination>
+  </div>
 </div>

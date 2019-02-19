@@ -74,6 +74,24 @@ export class DataService {
     {
       collegue: this.collegues[2],
       avis: Avis.AIMER
+    },
+    {
+      collegue: this.collegues[4],
+      avis: Avis.AIMER
+    },
+    {
+      collegue: this.collegues[8],
+      avis: Avis.AIMER
+    }
+    ,
+    {
+      collegue: this.collegues[5],
+      avis: Avis.AIMER
+    }
+    ,
+    {
+      collegue: this.collegues[2],
+      avis: Avis.AIMER
     }
   ]
 

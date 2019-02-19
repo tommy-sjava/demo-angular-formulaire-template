@@ -1,10 +1,15 @@
 <div *ngFor="let obj of listeVotes; index as i">
+  <div class="d-flex flex-column-reverse histo">
+    <div class="container">
+      <img src={{obj.collegue.photoUrl}} style="width:auto;height:100px;" />
+    </div>
+    <div class="d-flex flex-column">
+      {{obj.collegue.pseudo}}<br>
+      {{obj.collegue.pseudo}} est {{obj.avis}}, elle a désormais un score de {{obj.collegue.score}}
 
-  <img src={{obj.collegue.photoUrl}} />
-  <div>
-    {{obj.collegue.pseudo}}<br>
-    {{obj.collegue.pseudo}} est {{obj.avis}}, elle a désormais un score de {{obj.collegue.score}}
-    <br>
-    <button type="button" (click)="SupprimerVote(i)">Supprimer</button>
+      <div class="container suppr">
+        <button class="btn btn-danger" (click)="SupprimerVote(i)">Supprimer</button>
+      </div>
+    </div>
   </div>
 </div>
