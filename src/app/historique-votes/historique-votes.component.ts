@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
+import { Vote } from '../models';
 
 @Component({
   selector: 'app-historique-votes',
@@ -8,12 +9,14 @@ import { DataService } from '../services/data.service';
 })
 export class HistoriqueVotesComponent implements OnInit {
 
-  listeVotes = this._srv.listerVotes();
+  listeVotes: Vote[] = [];
 
   constructor(private _srv: DataService) { }
 
   ngOnInit() {
+    this._srv.voteSupprimerObs.subscribe(value => this.listeVotes.push(value));
   }
+
 
   SupprimerVote(nb: number) {
     if (nb === 0) {

@@ -9,11 +9,16 @@ import { Collegue } from '../models';
 })
 export class AccueilComponentComponent implements OnInit {
 
-  collegues: Collegue[] = this._serv.lister();
+  collegues: Collegue[];
+
 
   constructor(private _serv: DataService) { }
 
   ngOnInit() {
+    this._serv.listerCollegues().subscribe(
+      value => this.collegues = value,
+
+    );
   }
 
 }

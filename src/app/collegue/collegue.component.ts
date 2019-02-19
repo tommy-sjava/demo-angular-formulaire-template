@@ -24,7 +24,9 @@ export class CollegueComponent implements OnInit {
 
   onVoted(avis: Avis) {
 
-    this._serv.donnerUnAvis(this.collegue, avis);
+    this._serv.donnerUnAvis(this.collegue, avis).subscribe(
+      value => this.collegue = value
+    );
     this.gererActivationBoutons();
   }
 
