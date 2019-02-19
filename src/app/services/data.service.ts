@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Collegue, Avis } from '../models';
+import { Collegue, Avis, Vote } from '../models';
 
 @Injectable({
   providedIn: 'root'
@@ -60,6 +60,24 @@ export class DataService {
 
   collegues: Collegue[] = [this.collegueTest, this.collegueTest2, this.collegueTest3, this.collegueTest4, this.collegueTest5, this.collegueTest6, this.collegueTest7, this.collegueTest8, this.collegueTest9];
 
+  // TODO alimenter la liste de votes
+  // Référencer un objet Collegue comme suit : `this.listeCollegues[0]`
+  listeVotes: Vote[] = [
+    {
+      collegue: this.collegues[0],
+      avis: Avis.AIMER
+    },
+    {
+      collegue: this.collegues[1],
+      avis: Avis.DETESTER
+    },
+    {
+      collegue: this.collegues[2],
+      avis: Avis.AIMER
+    }
+  ]
+
+
 
   constructor() { }
 
@@ -75,6 +93,13 @@ export class DataService {
       collegue.score--;
     }
     return collegue;
+  }
+
+
+
+  listerVotes(): Vote[] {
+    // TODO retourner la liste des votes.
+    return this.listeVotes;
   }
 
 }

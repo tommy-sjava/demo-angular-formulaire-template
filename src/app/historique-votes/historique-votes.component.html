@@ -1,0 +1,10 @@
+<div *ngFor="let obj of listeVotes; index as i">
+
+  <img src={{obj.collegue.photoUrl}} />
+  <div>
+    {{obj.collegue.pseudo}}<br>
+    {{obj.collegue.pseudo}} est {{obj.avis}}, elle a désormais un score de {{obj.collegue.score}}
+    <br>
+    <button type="button" (click)="SupprimerVote(i)">Supprimer</button>
+  </div>
+</div>
