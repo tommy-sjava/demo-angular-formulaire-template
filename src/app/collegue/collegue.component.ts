@@ -20,13 +20,17 @@ export class CollegueComponent implements OnInit {
 
   ngOnInit() {
     this.gererActivationBoutons();
+    if (JSON.parse(localStorage.getItem(`${this.collegue.pseudo}`))) {
+      this.collegue = JSON.parse(localStorage.getItem(`${this.collegue.pseudo}`))
+    };
   }
 
   onVoted(avis: Avis) {
 
     this._serv.donnerUnAvis(this.collegue, avis).subscribe(
-      value => this.collegue = value
+      value => localStorage.setItem(`${this.collegue.pseudo}`, JSON.stringify(this.collegue = value))
     );
+
     this.gererActivationBoutons();
   }
 
