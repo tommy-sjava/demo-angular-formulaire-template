@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Collegue, Avis, Vote } from '../models';
 import { Observable, of, Subject } from 'rxjs';
 import { environment } from '../../environments/environment';
+import { HttpClient } from '@angular/common/http';
 
 const URL_BACKEND = environment.backendUrl;
 
@@ -62,43 +63,7 @@ export class DataService {
       photoUrl: 'https://myanimelist.cdn-dena.com/images/characters/5/292448.jpg'
     }
   */
-  collegues: Collegue[]/* = [this.collegueTest, this.collegueTest2, this.collegueTest3, this.collegueTest4, this.collegueTest5, this.collegueTest6, this.collegueTest7, this.collegueTest8, this.collegueTest9];*/
-
-  // TODO alimenter la liste de votes
-  // Référencer un objet Collegue comme suit : `this.listeCollegues[0]`
-  /*listeVotes: Vote[] = [
-    {
-      collegue: this.collegues[0],
-      avis: Avis.AIMER
-    },
-    {
-      collegue: this.collegues[1],
-      avis: Avis.DETESTER
-    },
-    {
-      collegue: this.collegues[2],
-      avis: Avis.AIMER
-    },
-    {
-      collegue: this.collegues[4],
-      avis: Avis.AIMER
-    },
-    {
-      collegue: this.collegues[8],
-      avis: Avis.AIMER
-    }
-    ,
-    {
-      collegue: this.collegues[5],
-      avis: Avis.AIMER
-    }
-    ,
-    {
-      collegue: this.collegues[2],
-      avis: Avis.AIMER
-    }
-  ]*/
-  //listeVotes: Vote[] = []
+  collegues: Collegue[]
 
   private voteSupprimeSub = new Subject<Vote>();
 
@@ -110,11 +75,12 @@ export class DataService {
     this.voteSupprimeSub.next(v);
   }
 
-  constructor() { }
+  constructor(private _http: HttpClient) { }
 
   listerCollegues(): Observable<Collegue[]> {
-    console.log(this.collegues)
-    return of(this.collegues);
+
+    return this._http.get<Collegue[]>(`${URL_BACKEND}/collegues`);
+
   }
 
   donnerUnAvis(collegue: Collegue, avis: Avis): Observable<Collegue> {

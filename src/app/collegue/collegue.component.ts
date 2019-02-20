@@ -35,8 +35,8 @@ export class CollegueComponent implements OnInit {
   }
 
   gererActivationBoutons() {
-    this.likeActif = this.collegue.score < 10;
-    this.unLikeActif = this.collegue.score > -10;
+    this.likeActif = this.collegue.score < 100;
+    this.unLikeActif = this.collegue.score > -100;
   }
 
 
