@@ -1,0 +1,12 @@
+<form>
+  <input type="text" name="nom" #champNom="ngModel" [(ngModel)]="unePersonne.lastname" required minlength="3">
+  <p *ngIf="champNom.dirty && champNom.invalid">
+    Le nom est invalide
+  </p>
+
+  <input type="text" name="prenom" [(ngModel)]="unePersonne.firstname" required>
+  <p>
+    Le nom est {{unePersonne | json}}
+  </p>
+  <button (click)="valider()">Valider</button>
+</form>>

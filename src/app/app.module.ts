@@ -11,6 +11,9 @@ import { AccueilComponentComponent } from './accueil-component/accueil-component
 import { ScorePipe } from './pipes/score.pipe';
 import { HistoriqueVotesComponent } from './historique-votes/historique-votes.component';
 import { VoteCountComponent } from './vote-count/vote-count.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DemoFormsTemplateComponent } from './demo-forms-template/demo-forms-template.component';
+import { DemoReactiveFormsComponent } from './demo-reactive-forms/demo-reactive-forms.component';
 
 @NgModule({
   declarations: [
@@ -21,16 +24,20 @@ import { VoteCountComponent } from './vote-count/vote-count.component';
     AccueilComponentComponent,
     ScorePipe,
     HistoriqueVotesComponent,
-    VoteCountComponent
+    VoteCountComponent,
+    DemoFormsTemplateComponent,
+    DemoReactiveFormsComponent
   ],
   imports: [
     NgbModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
 
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
