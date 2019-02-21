@@ -21,4 +21,11 @@ export class AccueilComponentComponent implements OnInit {
     );
   }
 
+  refresh() {
+    this._serv.listerCollegues().subscribe(
+      value => this.collegues = value,
+
+    );
+  }
+
 }

@@ -28,14 +28,15 @@ export class CollegueComponent implements OnInit {
   onVoted(avis: Avis) {
 
     this._serv.donnerUnAvis(this.collegue, avis).subscribe(
-      value => this.collegue = value
+      value => { this.collegue = value, this.gererActivationBoutons() }
+
     );
 
-    this.gererActivationBoutons();
+
   }
 
   gererActivationBoutons() {
-    this.likeActif = this.collegue.score < 100;
+    this.likeActif = this.collegue.score < 95;
     this.unLikeActif = this.collegue.score > -100;
   }
 
