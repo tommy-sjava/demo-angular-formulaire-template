@@ -28,7 +28,7 @@ export class CollegueComponent implements OnInit {
   onVoted(avis: Avis) {
 
     this._serv.donnerUnAvis(this.collegue, avis).subscribe(
-      value => localStorage.setItem(`${this.collegue.pseudo}`, JSON.stringify(this.collegue = value))
+      value => this.collegue = value
     );
 
     this.gererActivationBoutons();
